@@ -21,8 +21,7 @@ function* rootSaga() {
 function* fetchMovies() {
     try {
         let movieResponse = yield axios.get('/movies');
-        yield put({ type: 'SET_MOVIES', payload: movieResponse.data });
-        console.log(movieResponse.data)
+        yield put({ type: 'FETCH_MOVIES', payload: movieResponse.data });
     } catch (err) {
         console.log(err);
     }
@@ -33,7 +32,7 @@ const sagaMiddleware = createSagaMiddleware();
 // Used to store movies returned from the server
 const movies = (state = [], action) => {
     switch (action.type) {
-        case 'SET_MOVIES':
+        case 'FETCH_MOVIES':
             return action.payload;
         default:
             return state;

@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
+import Home from '../MovieList/MovieList'
+import { HashRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux'
 
 class App extends Component {
   // Renders the entire app on the DOM
+  componentDidMount() {
+    this.props.dispatch({type: 'SET_MOVIES'})
+  }
   render() {
     return (
       <div className="App">
-        <p>Empty Page</p>
+        <HashRouter>
+          <Route exact path="/" render={(props) => <Home {...props} dispatch={this.props.dispatch} />} />
+        </HashRouter>
       </div>
     );
   }
 }
 
-export default App;
+const reduxStateToProps = (reduxState) => ({ reduxState });
+export default connect(reduxStateToProps)(App);

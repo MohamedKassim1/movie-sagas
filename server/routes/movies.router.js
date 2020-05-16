@@ -1,9 +1,9 @@
 const express = require('express');
 const pool = require('../modules/pool');
 
-const router = express.Router();
+const movieRouter = express.Router();
 
-router.get('/', (req, res) => {
+movieRouter.get('/', (req, res) => {
   let query = 'SELECT * FROM "movies"';
   pool.query(query).then( result => {
     res.send(result.rows);
@@ -13,4 +13,4 @@ router.get('/', (req, res) => {
   })
 })
 
-module.exports = router;
+module.exports = movieRouter;
