@@ -16,7 +16,7 @@ export class Details extends Component {
                 {/* {JSON.stringify(this.props.reduxState.getDetails)} */}
                 <p><img src={this.props.reduxState.getDetails.poster} /></p>
                 <p>{this.props.reduxState.getDetails.description}</p>
-                {this.props.reduxState.genres.map(item => <li>{item.name}</li>)}
+                {this.props.reduxState.genres.map(item => <li>Genre: {item.name}</li>)}
             </div>
         )
     }
