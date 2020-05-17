@@ -7,16 +7,19 @@ export class Details extends Component {
     backToList = () =>{
         this.props.history.push('/')
     }
+    startEdit = () => {
+        this.props.history.push('/edit')
+    }
     render() {
         return (
             <div>
                 {/* <h3>In Details</h3> */}
                 <button onClick={this.backToList}>Back to List</button>
-                <button>Edit</button>
+                <button onClick={this.startEdit}>Edit</button>
                 {/* {JSON.stringify(this.props.reduxState.getDetails)} */}
                 <p><img src={this.props.reduxState.getDetails.poster} /></p>
                 <p>{this.props.reduxState.getDetails.description}</p>
-                {this.props.reduxState.genres.map(item => <li>Genre: {item.name}</li>)}
+                 {this.props.reduxState.genres.map(item => <li>{item.name}</li>)}
             </div>
         )
     }
