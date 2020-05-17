@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from '../MovieList/MovieList'
+import Details from '../Details/Details'
 import { HashRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux'
 
@@ -14,6 +15,7 @@ class App extends Component {
       <div className="App">
         <HashRouter>
           <Route exact path="/" render={(props) => <Home {...props} dispatch={this.props.dispatch} />} />
+          <Route exact path="/details" render={(props) => <Details {...props} dispatch={this.props.dispatch} />} />
         </HashRouter>
       </div>
     );
