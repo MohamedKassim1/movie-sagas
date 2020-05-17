@@ -20,11 +20,29 @@ CREATE TABLE movie_genre(
     "id" SERIAL PRIMARY KEY,
     "movies_id" INT,
     "genres_id" INT,
-    FOREIGN KEY (movies_id) REFERENCES genres (id),
-    FOREIGN KEY (genres_id) REFERENCES movies (id)
+    FOREIGN KEY (movies_id) REFERENCES movies (id),
+    FOREIGN KEY (genres_id) REFERENCES genres (id)
 );
 
-
+INSERT INTO "movie_genre"
+("movies_id", "genres_id")
+VALUES
+(1, 1),
+(2, 2),
+(3, 13),
+(4, 2),
+(6, 11),
+(7, 7),
+(8, 6),
+(9, 1),
+(10, 7),
+(11, 11),
+(12, 3),
+(13, 11),
+(14, 1),
+(14, 2),
+(10, 1),
+(2, 10);
 --------[ DATA! ]---------
 
 -- starter movies

@@ -5,7 +5,6 @@ export class Home extends Component {
     render() {
         return (
             <div>
-                <p>hi</p>
                 {/* {JSON.stringify(this.props.reduxState.movies)} */}
                 
                 {this.props.reduxState.movies.map(item => <MovieItem key={item.id} item={item} />)}
