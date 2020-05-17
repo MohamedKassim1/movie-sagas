@@ -7,7 +7,7 @@ export class Home extends Component {
             <div>
                 {/* {JSON.stringify(this.props.reduxState.movies)} */}
                 
-                {this.props.reduxState.movies.map(item => <MovieItem key={item.id} item={item} />)}
+                {this.props.reduxState.movies.map(item => <MovieItem key={item.id} item={item} history={this.props.history}/>)}
               
             </div>
         )
